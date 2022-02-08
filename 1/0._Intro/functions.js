@@ -37,5 +37,8 @@ const drinking = (name) => name + " is drinking.";
 
 console.log(doingSomething(drinking, "Bukowski"));
 
+// todo write study like above but in a one-liner
 
+const studyResult = doingSomething(name => name + " is studying", "Juan");
 
+console.log(studyResult);
