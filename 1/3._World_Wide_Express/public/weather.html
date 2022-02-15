@@ -8,9 +8,23 @@
 <body>
     <h1>Today's forecast</h1>
 
+    <div id="forecast">
+        <p id="temperature"></p>
+    </div>
+
     <script>
-        // http://api.weatherstack.com/current?access_key=361bbf753b816d01b117fffca0e5ed2b&query=Copenhagen
+
         /* task call the API and display it on the page */
+
+        fetch("http://api.weatherstack.com/current?access_key=361bbf753b816d01b117fffca0e5ed2b&query=Copenhagen")
+        .then(res => res.json())
+        .then(res => {
+            const temperatureDiv = document.getElementById("temperature");
+
+            temperatureDiv.innerText = res.current.temperature + " °C";
+        });
+        
+
     </script>
 </body>
 </html>
