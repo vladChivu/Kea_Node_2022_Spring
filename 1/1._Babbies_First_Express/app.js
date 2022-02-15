@@ -18,6 +18,14 @@ app.get("/about", (req, res) => {
     });
 });
 
+app.get("/aboutclient/:clientName", (req, res) => {
+    res.send({ greeting: `Hello there ${req.params.clientName}`});
+});
+
+app.get("/libraries", (req, res) => {
+    res.send(req.query);
+});
+
 app.post("/", (req, res) => {
     console.log(req.body);
     res.send(req.body);
@@ -28,4 +36,10 @@ app.post("/", (req, res) => {
 // task create a GET route called about that sends some info about the server
 // task implement a POST request handler on the endpoint /opinion based on the client data the server sends a response that contains an opinion 
 
-app.listen(8080);
+app.listen(8080, (error) => {
+   console.log("Server is running on port", 8080); 
+});
+
+// how do you send data in a GET request?
+// path variables  url: /thisisdynamic
+// query string    url: ?key=value&key2=value2
