@@ -15,7 +15,8 @@ const discountedPhones = smartPhones.map(smartPhone => {
     return smartPhone;
 });
 
-// console.log(discountedPhones);
+console.log(discountedPhones);
+console.log(smartPhones);
 
 // task I am a poor boy... remove all phones that cost more than 4000
 const phonesICanAfford = smartPhones.filter(smartPhone => smartPhone.price <= 4000);
