@@ -1,0 +1,26 @@
+{
+  "name": "ssr_express",
+  "version": "1.0.0",
+  "description": "To show one way to do SSR in Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anderslatif/Kea_Node_2022_Spring.git"
+  },
+  "keywords": [
+    "SSR",
+    "express"
+  ],
+  "author": "Anders Latif",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anderslatif/Kea_Node_2022_Spring/issues"
+  },
+  "homepage": "https://github.com/anderslatif/Kea_Node_2022_Spring#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
