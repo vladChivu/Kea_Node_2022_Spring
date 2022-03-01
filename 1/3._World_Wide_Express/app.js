@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
 
-const animalsUtils = require("./animals/animalsUtils.js");
-console.log("You like this many animals:", animalsUtils.calcuateFavoriteAnimals());
-
+/* const animalsUtils = require("./animals/animalsUtils.js");
+console.log("You like this many animals:", animalsUtils.calcuateFavoriteAnimals()); */
 
 app.use(express.static("public"));
+
+const animalsRouter = require("./routers/animalsrouter.js");
+app.use(animalsRouter);
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/frontpage/frontpage.html");
