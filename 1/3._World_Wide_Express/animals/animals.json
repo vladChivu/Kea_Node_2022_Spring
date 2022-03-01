@@ -1,3 +1,4 @@
 {
-    "favorite": ["Koala", "Dog", "Tiger"]
+    "favorites": ["Koala", "Dog", "Tiger", "Cat"],
+    "secondKey": "Andreas"
 }

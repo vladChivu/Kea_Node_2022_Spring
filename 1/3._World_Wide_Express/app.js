@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 
+const animalsUtils = require("./animals/animalsUtils.js");
+console.log("You like this many animals:", animalsUtils.calcuateFavoriteAnimals());
+
+
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
