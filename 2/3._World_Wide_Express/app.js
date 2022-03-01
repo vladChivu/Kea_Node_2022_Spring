@@ -3,7 +3,11 @@ const app = express();
 
 app.use(express.static("public"));
 
-console.log(require("./dinosaurs/dinosaurs.json"));
+// const { calculateAmountOfCoolDinosaurs } = require("./dinosaurs/dinosaurs.js");
+// console.log(calculateAmountOfCoolDinosaurs());
+
+const dinosaurrouter = require("./routers/dinosaurrouter.js");
+app.use(dinosaurrouter.router);
 
 
 app.get("/", (req, res) => {
