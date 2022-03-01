@@ -15,6 +15,11 @@ app.get("/weather", (req, res) => {
     res.sendFile(__dirname + "/public/weather.html");
 });
 
-app.listen(8080, () => {
-    console.log("Server running on port", 8080);
+
+
+const PORT = process.env.PORT || 6000;
+
+const server = app.listen(PORT, () => {
+    console.log("Server running on port", server.address().port);
 });
+
