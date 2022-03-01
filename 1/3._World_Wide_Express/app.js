@@ -22,7 +22,6 @@ app.get("/weather", (req, res) => {
 });
 
 
-
 const PORT = process.env.PORT || 6000;
 
 const server = app.listen(PORT, () => {
