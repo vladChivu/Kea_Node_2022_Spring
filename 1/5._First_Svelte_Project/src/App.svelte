@@ -1,12 +1,17 @@
 <script>
 	export let name;
 
+	import Tree from "./pages/Tree/Tree.svelte";
 	import Profile from "./pages/Profile/Profile.svelte";
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<Profile />
+
+	<Tree />
+
+	<!-- <Profile name={name} />
+	<Profile name={"Juan"} /> -->
 </main>
 
 <style>

@@ -1,0 +1,27 @@
+<script>
+    const apples = ['🍏', '🍎', '🍏', '🍎', '🍎', '🍏'];
+
+
+    function pickAnApple() {
+        console.log("Picked an apple");
+    }
+</script>
+
+<div id="tree">
+    <h1>Tree</h1>
+    <button on:click={pickAnApple}>Pick an apple</button>
+</div>
+<div id="trunk">
+</div>
+
+<style>
+    #tree {
+        background-color: lightgreen;
+    }
+
+    #trunk {
+        background-color: saddlebrown;
+        height: 120px;
+        width: 50px;
+    }
+</style>
