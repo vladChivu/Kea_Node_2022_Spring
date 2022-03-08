@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+const fetch = require("node-fetch");
+
 app.use(express.static("public"));
 
 // const { calculateAmountOfCoolDinosaurs } = require("./dinosaurs/dinosaurs.js");
@@ -25,6 +27,11 @@ app.get("/bored", (req, res) => {
     res.sendFile(__dirname + "/public/activities.html")
 });
 
+app.get("/proxy", async (req, res) => {
+    const response = await fetch("https://www.google.com")
+    const homepage = await response.text();
+    res.send(homepage);
+});
 
 
 const PORT = process.env.PORT || 9000;
