@@ -1,15 +1,23 @@
 <script>
 	export let name;
 
+	import Sun from "./components/Sun/Sun.svelte";
+import Profile from "./pages/Profile/Profile.svelte";
 	import Tree from "./pages/Tree/Tree.svelte";
-
 </script>
+
+
 
 <main>
 	<h1>Hello {name}!</h1>
 
+	<Sun />
 	<Tree />
 	
+	<Profile name={"Anders"} favoriteColor={"blue"} />
+	
+	<Profile name={"Mads"} favoriteColor={"orange"} />
+
 </main>
 
 <style>
