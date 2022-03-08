@@ -3,12 +3,15 @@
 
 	import Tree from "./pages/Tree/Tree.svelte";
 	import Profile from "./pages/Profile/Profile.svelte";
+	import Dog from "./pages/Dog/Dog.svelte";
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
 
-	<Tree />
+	<Dog />
+
+	<!-- <Tree /> -->
 
 	<!-- <Profile name={name} />
 	<Profile name={"Juan"} /> -->

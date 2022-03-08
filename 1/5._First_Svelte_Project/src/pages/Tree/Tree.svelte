@@ -1,17 +1,20 @@
 <script>
     import Apple from "../Tree/Apple.svelte";
 
-    const apples = ['🍏', '🍎', '🍏', '🍎', '🍎', '🍏'];
+    let apples = ['🍏', '🍎', '🍏', '🍎', '🍎', '🍏'];
 
     function pickAnApple() {
         console.log("Picked an apple");
         apples.pop();
+        apples = apples;
     }
 </script>
 
 <div id="tree">
     <h1>Tree</h1>
-    <Apple apple={apples[0]}/>
+    {#each apples as apple}
+        <Apple apple={apple}/>
+    {/each}
     <button on:click={pickAnApple}>Pick an apple</button>
 </div>
 <div id="trunk">
