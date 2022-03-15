@@ -1,20 +1,20 @@
 <script>
-import Child from "../../components/Child/Child.svelte";
-import Parent from "../../components/Parent/Parent.svelte";
+    import Child from "../../components/Child/Child.svelte";
+    import Parent from "../../components/Parent/Parent.svelte";
 
-import { supermarket } from "../../store/supermarket.js";
+    import { supermarket } from "../../store/supermarket.js";
 
 
-const parents = [
-    {
-        key: 1,
-        name: "Adam"
-    },
-    {
-        key: 2,
-        name: "Eve"
-    }
-];
+    const parents = [
+        {
+            key: 1,
+            name: "Adam"
+        },
+        {
+            key: 2,
+            name: "Eve"
+        }
+    ];
 
     function onFamilyMeetingCalled(whoCalled) {
         console.log("Family meeting called by", whoCalled);
