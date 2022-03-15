@@ -1,1 +1,5 @@
-<h1>Hi I am a Svelte Parent</h1>
+<script>
+    export let name;
+</script>
+
+<h2>Hello I am {name}.</h2>
