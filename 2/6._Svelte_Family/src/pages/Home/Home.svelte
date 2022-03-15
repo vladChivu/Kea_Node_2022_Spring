@@ -12,12 +12,16 @@ const parents = [
         name: "Eve"
     }
 ];
+
+    function onFamilyMeetingCalled() {
+        console.log("Family meeting called");
+    }
 </script>
 
 <h1>This is the home of the Svelte family.</h1>
 
 {#each parents as parent (parent.key)}
-    <Parent name={parent.name} />
+    <Parent handleFamilyMeetingCall={onFamilyMeetingCalled} name={parent.name} />
 {/each}
 
 <Child stereotype="black-sheep" name="Thor" />

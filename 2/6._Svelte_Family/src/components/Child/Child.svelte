@@ -5,7 +5,9 @@
 
 </script>
 
-<div class:girly={isGirl}>
+<div class:girly={isGirl} 
+     class={stereotype || "beyond-any-stereotype"}
+>
     <h2>Hi, I am {name}.</h2>
 </div>
 
