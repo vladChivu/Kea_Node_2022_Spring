@@ -2,11 +2,14 @@
     export let name;
     export let isGirl = false;
     export let stereotype = "";
+    export let handleFamilyMeetingCall;
 
 </script>
 
-<div class:girly={isGirl} 
-     class={stereotype || "beyond-any-stereotype"}
+<div 
+    on:click|preventDefault={handleFamilyMeetingCall(name)}
+    class:girly={isGirl} 
+    class={stereotype || "beyond-any-stereotype"}
 >
     <h2>Hi, I am {name}.</h2>
 </div>

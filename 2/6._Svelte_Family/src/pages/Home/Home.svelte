@@ -13,8 +13,8 @@ const parents = [
     }
 ];
 
-    function onFamilyMeetingCalled() {
-        console.log("Family meeting called");
+    function onFamilyMeetingCalled(whoCalled) {
+        console.log("Family meeting called by", whoCalled);
     }
 </script>
 
@@ -24,6 +24,6 @@ const parents = [
     <Parent handleFamilyMeetingCall={onFamilyMeetingCalled} name={parent.name} />
 {/each}
 
-<Child stereotype="black-sheep" name="Thor" />
-<Child stereotype="bright-kid" name="Alex" />
-<Child isGirl={true} name="Maria" />
+<Child handleFamilyMeetingCall={onFamilyMeetingCalled} stereotype="black-sheep" name="Thor" />
+<Child handleFamilyMeetingCall={onFamilyMeetingCalled} stereotype="bright-kid" name="Alex" />
+<Child handleFamilyMeetingCall={onFamilyMeetingCalled}  isGirl={true} name="Maria" />

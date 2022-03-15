@@ -2,8 +2,12 @@
     export let name;
     export let handleFamilyMeetingCall;
 
-    console.log(handleFamilyMeetingCall);
-    // todo when clicking on a parent you should call a family meeting
 </script>
 
-<h1>Hello I am {name}.</h1>
+<h1 class="parent" on:click={handleFamilyMeetingCall(name)}>Hello I am {name}.</h1>
+
+<style>
+    .parent {
+        user-select: none;
+    }
+</style>
