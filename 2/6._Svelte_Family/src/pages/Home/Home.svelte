@@ -20,6 +20,6 @@ const parents = [
     <Parent name={parent.name} />
 {/each}
 
-<Child name="Thor" />
-<Child name="Alex" />
-<Child name="Maria" />
+<Child stereotype="black-sheep" name="Thor" />
+<Child stereotype="bright-kid" name="Alex" />
+<Child isGirl={true} name="Maria" />
