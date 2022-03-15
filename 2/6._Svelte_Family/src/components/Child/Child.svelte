@@ -4,6 +4,15 @@
     export let stereotype = "";
     export let handleFamilyMeetingCall;
 
+    import { supermarket } from "../../store/supermarket.js";
+
+    function eatCandy() {
+        supermarket.update(storeValue => {
+            if (storeValue.candy > 0) storeValue.candy--;
+            return storeValue;
+        });
+        // $supermarket.candy--;
+    }
 </script>
 
 <div 
@@ -13,6 +22,8 @@
 >
     <h2>Hi, I am {name}.</h2>
 </div>
+<div>Pieces of candy in the store: {$supermarket.candy}</div>
+<button on:click={eatCandy}>Eat candy</button>
 
 <style>
     .girly {
