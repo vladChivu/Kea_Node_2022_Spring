@@ -3,7 +3,6 @@
     export let isGirl = false;
     export let stereotype = "";
 
-    console.log(name, isGirl);
 </script>
 
 <h3 class:girl={isGirl} class={stereotype || "no-stereotype"}>Hi my name is {name}.</h3>

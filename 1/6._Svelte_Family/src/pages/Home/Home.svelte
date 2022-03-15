@@ -12,12 +12,16 @@ import Parent from "../../components/Parent/Parent.svelte";
             name: "Monica", 
         }
     ];
+
+    function handleFamilyMeeting(calleeName) {
+        console.log("A family meeting has been called by", calleeName);
+    }
 </script>
 
 <h1>Welcome to the home of the Svelte Family</h1>
 
 {#each parents as parent (parent.key)}
-    <Parent name={parent.name} />
+    <Parent onCallMeeting={handleFamilyMeeting} name={parent.name} />
 {/each}
 
 <Child stereotype="bright-kid" name="Junior"/>
