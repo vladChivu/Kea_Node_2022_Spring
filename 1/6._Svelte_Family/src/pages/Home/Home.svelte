@@ -2,6 +2,8 @@
 import Child from "../../components/Child/Child.svelte";
 import Parent from "../../components/Parent/Parent.svelte";
 
+import { supermarket } from "../../store/supermarket.js";
+
     const parents = [
         {
             key: 1,
@@ -27,3 +29,7 @@ import Parent from "../../components/Parent/Parent.svelte";
 <Child stereotype="bright-kid" name="Junior"/>
 <Child isGirl={true} name="Gertrude Junior"/>
 <Child stereotype="black-sheep" name="Who cares"/>
+
+
+<h3>Online portal to the supermarket</h3>
+<div>{JSON.stringify($supermarket, null, 4)}</div>
