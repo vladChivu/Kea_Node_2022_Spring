@@ -1,5 +1,5 @@
-const computerMemory = [0, 1, 0, 1, 0, 1, 0, 0];
+export const computerMemory = [0, 1, 0, 1, 0, 1, 0, 0];
 
-function getMemorySize() {
+export function getMemorySize() {
     return computerMemory.length;
 }
