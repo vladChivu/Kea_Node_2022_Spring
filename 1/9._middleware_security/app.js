@@ -1,12 +1,48 @@
 import express from "express";
 const app = express();
 
+import _ from "./password.js";
+
 app.use(express.static("public"));
+
+import helmet from "helmet";
+app.use(helmet());
+
+import rateLimit from "express-rate-limit";
+
+const baseLimiter = rateLimit({
+	windowMs: 15 * 60 * 1000, // 15 minutes
+	max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+	standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+});
+
+app.use(baseLimiter);
+
+const authLimiter = rateLimit({
+	windowMs: 15 * 60 * 1000, // 15 minutes
+	max: 6, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+	standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+});
+
+app.use("/auth", authLimiter);
+
+
+app.get("/auth", (req, res) => {
+    res.send({ message: "You are trying to log in"});
+});
 
 // app.get("/computer", (req, res) => {
 //     res.sendFile(__dirname + "/public/computer.html");
 // });
 
+app.use("/frontdoor", ipLogger);
+
+function ipLogger(req, res, next) {
+    console.log(req.ip);
+    next();
+}
 
 function guardHouse(req, res, next) {
     const username = "Hans";
