@@ -1,8 +1,6 @@
 import express from "express";
 const app = express();
 
-import _ from "./password.js";
-
 app.use(express.static("public"));
 
 import helmet from "helmet";
@@ -27,6 +25,19 @@ const authLimiter = rateLimit({
 });
 
 app.use("/auth", authLimiter);
+
+
+import session from "express-session";
+
+app.use(session({
+    secret: 'keyboard cat you should probably change this',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}));
+
+import coffeeRouter from "./routers/coffee.js";
+app.use(coffeeRouter);
 
 
 app.get("/auth", (req, res) => {

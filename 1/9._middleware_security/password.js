@@ -17,5 +17,3 @@ async function handlePasswords() {
 handlePasswords();
 
 export default {};
-
-// how to run / separate the backend / frontend 
