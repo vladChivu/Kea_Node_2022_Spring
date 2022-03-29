@@ -4,6 +4,8 @@ const app = express();
 // import cors from "cors";
 // app.use(cors());
 
+app.use(express.json());
+
 import path from "path";
 app.use(express.static(path.resolve("../client/public")));
 

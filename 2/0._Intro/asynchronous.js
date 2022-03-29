@@ -22,15 +22,31 @@ new Promise((resolve, reject) => {
     }
 
 })
-.then(message => console.log(message))
-.catch(errorMessage => console.log(errorMessage));
+// .then(message => console.log(message))
+// .catch(errorMessage => console.log(errorMessage));
 
-/* assignment
-create a function called somethingGoodSomethingBad 
-it should return a promise 
-[- that is to say that we wrap the function in a promise]
-BEWARE!!!: you should not handle the promise.. just create a function that returns a promise
 
- make it take 4 seconds to complete
+function somethingGoodSomethingBad() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            try {
+                throw new Error;
+                resolve("Good");
+            } catch {
+                reject("Bad");
+            }
+        }, 4000);
+    });
+}
 
-*/
+
+// IIFE
+(async function callMyCustomPromise() {
+    try {
+        const message = await somethingGoodSomethingBad();
+        console.log(message);
+    } catch (errorMessage) {
+        console.log(errorMessage);
+    }
+})()
+
