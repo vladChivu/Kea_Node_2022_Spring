@@ -2,13 +2,17 @@
 	import { onMount } from "svelte";
 	import { baseURL } from "./store/generalStore.js";
 
+	let players = "";
+
 	onMount(async () => {
-		const response = await fetch($baseURL + "/players");
+		const response = await fetch("/players");
+		const { data:playersArray } = await response.json();
+		players = playersArray;
 	});
 </script>
 
 <main>
-	<h1>Page Content</h1>
+	<h1>{JSON.stringify(players)}</h1>
 </main>
 <footer>
 	© {new Date().getFullYear()}
