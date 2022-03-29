@@ -5,7 +5,7 @@
 	let movies;
 
 	onMount(async () => {
-		const response = await fetch("/movies");
+		const response = await fetch("/api/movies");
 		const { data } = await response.json();
 		console.log(data);
 		movies = data;

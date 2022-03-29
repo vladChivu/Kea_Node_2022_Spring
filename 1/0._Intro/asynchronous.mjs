@@ -30,8 +30,31 @@ new Promise((resolve, reject) => {
 .then(message => console.log(message))
 .catch(errorMessage => console.log(errorMessage));
 
-/* assignment create a function called somethingGoodSomethingBad 
-it should return a promise - that is to say that we wrap the function in a promise
-BEWARE: you should not handle the promise.. just create a function that returns a promise
-    make it take 4 seconds to complete
-*/
+
+function somethingGoodSomethingBad() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            try {
+                throw Error;
+                resolve("Good");
+            } catch (stackTrace) {
+                reject("Bad");
+            }
+        }, 4000);
+    });
+}
+
+
+// const goodOrBad = await somethingGoodSomethingBad();
+// console.log(goodOrBad);
+
+// IIFE
+(async function getCondition() {
+    try {
+        const goodOrBad = await somethingGoodSomethingBad();
+        console.log(goodOrBad);
+    } catch (itWentWrong) {
+        console.log(itWentWrong);
+    }
+})()
+
