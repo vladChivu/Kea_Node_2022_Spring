@@ -3,6 +3,8 @@ const app = express();
 
 app.use(express.static("public"));
 
+import path from "path";
+
 import helmet from "helmet";
 app.use(helmet());
 
@@ -40,13 +42,13 @@ import coffeeRouter from "./routers/coffee.js";
 app.use(coffeeRouter);
 
 
-app.get("/auth", (req, res) => {
+app.post("/auth", (req, res) => {
     res.send({ message: "You are trying to log in"});
 });
 
-// app.get("/computer", (req, res) => {
-//     res.sendFile(__dirname + "/public/computer.html");
-// });
+app.get("/computer", (req, res) => {
+    res.sendFile(path.resolve("public/computer.html"));
+});
 
 app.use("/frontdoor", ipLogger);
 
