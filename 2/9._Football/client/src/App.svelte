@@ -2,24 +2,22 @@
 	import { onMount } from "svelte";
 	import { baseURL } from "./store/generalStore.js";
 
-	let movies;
+	let players = "";
 
 	onMount(async () => {
-		const response = await fetch("/api/movies");
-		const { data } = await response.json();
-		console.log(data);
-		movies = data;
+		const response = await fetch("/api/players");
+		const { data:playersArray } = await response.json();
+		players = playersArray;
 	});
-
 </script>
 
 <main>
-	<h1>{JSON.stringify(movies)}</h1>
+	<h1>{JSON.stringify(players)}</h1>
 </main>
 <footer>
-	©{new Date().getFullYear()} 
-	About
+	© {new Date().getFullYear()}
 	Contact
+	About
 </footer>
 
 <style>
@@ -28,13 +26,12 @@
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
-		min-height: calc(100vh - 60px);
+		min-height: calc(100vh - 3.7em);
 	}
 
 	footer {
 		background-color: grey;
 	}
-
 
 	@media (min-width: 640px) {
 		main {

@@ -3,9 +3,11 @@ const app = express();
 
 app.use(express.static("public"));
 
-/* app.get("/clothes", (req, res) => {
-    res.sendFile(__dirname + "/public/clothes.html");
-}); */
+import path from "path";
+
+app.get("/clothes", (req, res) => {
+    res.sendFile(path.resolve("public/clothes.html"));
+});
 
 import helmet from "helmet";
 
