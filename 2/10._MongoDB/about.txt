@@ -1,0 +1,11 @@
+MongoDb                    SQL
+Collections   <----->      Tables
+
+Relations
+
+jsonSchema vs. ODM 
+
+C  - insert
+R  - find 
+U  - update
+D  - deleteOne/deleteMany/remove
