@@ -1,6 +1,0 @@
-const sum = new Function('a', 'b', 'return a + b');
-
-test('adds 1 and 2 together', () => {
-    expect(sum(1, 2)).toBe(3);
-});
-
