@@ -10,7 +10,11 @@ import { Server } from "socket.io";
 const io = new Server(server);
 
 io.on("connection", (socket) => {
-    console.log("A client connected", socket.id);
+    // console.log("A client connected", so cket.id);
+
+    socket.on("a client changed the color", ({ data }) => {
+        socket.emit("please change the color", { data });
+    });
 
 });
 
