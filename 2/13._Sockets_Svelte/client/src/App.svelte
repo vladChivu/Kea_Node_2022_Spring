@@ -1,12 +1,25 @@
 <script>
 	import UserRegistration from "./Pages/UserRegistration/UserRegistration.svelte";
+	import Colors from "./Pages/Colors/Colors.svelte";
 
-	// task console log the username here
-	
+	import { onMount } from "svelte";
+
+	let username;
+
+	onMount(async () => {
+		const response = await fetch("/api/fetchUser");
+		const { data } = await response.json();
+		username = data;
+	});
+
 </script>
 
 <main>
-	<UserRegistration />
+	{#if username}
+		<Colors />
+	{:else}
+		<UserRegistration />
+	{/if}
 </main>
 
 <style>
