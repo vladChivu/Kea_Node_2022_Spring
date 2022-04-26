@@ -7,12 +7,12 @@ router.get("/api/fetchuser", (req, res) => {
 
 router.get("/api/logout", (req, res) => {
     req.session.username = undefined;
-    res.send({ data: "Sad to see you go" });
+    res.redirect("/");
 });
 
 router.post("/api/registeruser", (req, res) => {
     req.session.username = req.body.username;
-    res.send({ data: "Your username is: " });
+    res.redirect("/");
 });
 
 
