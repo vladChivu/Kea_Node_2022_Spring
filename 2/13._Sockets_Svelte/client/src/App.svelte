@@ -1,12 +1,16 @@
 <script>
+	import UserRegistration from "./Pages/UserRegistration/UserRegistration.svelte";
+
+	// task console log the username here
+	
 </script>
 
 <main>
+	<UserRegistration />
 </main>
 
 <style>
 	main {
-		text-align: center;
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
